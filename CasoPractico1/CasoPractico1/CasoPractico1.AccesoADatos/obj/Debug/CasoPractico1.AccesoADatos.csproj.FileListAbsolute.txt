@@ -26,3 +26,17 @@ C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\Caso
 C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPrac.B2743163.Up2Date
 C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.dll
 C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.pdb
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.AccesoADatos.dll.config
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.AccesoADatos.dll
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.AccesoADatos.pdb
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.Abstracciones.dll
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.dll
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.Abstracciones.pdb
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.xml
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.csproj.AssemblyReference.cache
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.csproj.CoreCompileInputs.cache
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPrac.B2743163.Up2Date
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.dll
+C:\Users\eliso\Desktop\caso 2 hoy\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.pdb

@@ -1,0 +1,56 @@
+@model CasoPractico1.Abstracciones.ModelosParaUI.BuscarCitaDTO
+
+<div>
+    <h4>Detalles de la cita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Nombre</dt>
+        <dd>@Html.DisplayFor(m => m.NombreDeLaPersona)</dd>
+
+        <dt>Teléfono</dt>
+        <dd>@Html.DisplayFor(m => m.Telefono)</dd>
+
+        <dt>Correo</dt>
+        <dd>@Html.DisplayFor(m => m.Correo)</dd>
+
+        <dt>Identificación</dt>
+        <dd>@Html.DisplayFor(m => m.Identificacion)</dd>
+
+        <dt>Fecha de nacimiento</dt>
+        <dd>@Html.DisplayFor(m => m.FechaNacimiento)</dd>
+
+        <dt>Dirección</dt>
+        <dd>@Html.DisplayFor(m => m.Direccion)</dd>
+
+        <dt>Servicio</dt>
+        <dd>@Html.DisplayFor(m => m.Nombre)</dd>
+
+        <dt>Especialidad</dt>
+        <dd>
+            @if (Model.Especialidad == 1)
+            {
+                <text>Medicina General</text>
+            }
+            else if (Model.Especialidad == 2)
+            {
+                <text>Imagenología</text>
+            }
+            else if (Model.Especialidad == 3)
+            {
+                <text>Microbiología</text>
+            }
+        </dd>
+
+        <dt>Especialista</dt>
+        <dd>@Html.DisplayFor(m => m.Especialista)</dd>
+
+        <dt>Monto total</dt>
+        <dd>@Html.DisplayFor(m => m.MontoTotal)</dd>
+
+        <dt>Fecha de la cita</dt>
+        <dd>@Html.DisplayFor(m => m.FechaDeLaCita)</dd>
+
+        <dt>Fecha de reservación</dt>
+        <dd>@Html.DisplayFor(m => m.FechaDeRegistroCita)</dd>
+    </dl>
+</div>

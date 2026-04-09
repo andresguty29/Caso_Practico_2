@@ -13,8 +13,8 @@
 <p>
     @using (Html.BeginForm("DetallesCitas", "Citas", FormMethod.Get))
     {
-        <input type="text" name="id" placeholder="Ingrese ID" />
-        <input type="submit" value="Buscar cita" />
+        <input type="text" id="buscarIdCita" name="id" placeholder="Ingrese ID" />
+		<input type="button" id="btnBuscarCitaAjax" value="Buscar cita" />
     }
 </p>
 
@@ -89,3 +89,54 @@
     }
 
 </table>
+
+
+<div id="detallesCitaModal" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Detalles de la cita</h4>
+			</div>
+			<div class="modal-body" id="detallesCitaBody">
+			
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script>
+		$(function () {
+			$('#btnBuscarCitaAjax').on('click', function () {
+				var id = $('#buscarIdCita').val();
+				if (!id) {
+					alert('Por favor ingrese un ID de cita válido');
+					return;
+				}
+
+				$.ajax({
+					url: '@Url.Action("DetallesCitasPartial", "Citas")',
+					data: { id: id },
+					type: 'GET',
+					success: function (data) {
+						if (data && data.notFound) {
+							// Redirigir o mostrar mensaje
+							window.location = '@Url.Action("ListarServiciosCitas", "Citas")' + '?mensaje=' + encodeURIComponent(data.message);
+							return;
+						}
+
+						$('#detallesCitaBody').html(data);
+						$('#detallesCitaModal').modal('show');
+					},
+					error: function () {
+						alert('Error al buscar la cita');
+					}
+				});
+			});
+		});
+	</script>
+}

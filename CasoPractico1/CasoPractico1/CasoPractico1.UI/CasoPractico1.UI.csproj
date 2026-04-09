@@ -229,10 +229,10 @@
     <Content Include="Views\Servicios\ListarCitas.cshtml" />
     <Content Include="Views\Citas\DetallesCitas.cshtml" />
     <Content Include="Views\Citas\CitasPorCliente.cshtml" />
+    <Content Include="Views\Citas\_DetallesCitaPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -315,4 +315,3 @@
   <Target Name="AfterBuild">
   </Target> -->
 </Project>
-

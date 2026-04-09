@@ -43,6 +43,20 @@ namespace CasoPractico1.Controllers
             _listarCitasPorCliente = new ListarCitasPorClienteLN();
         }
 
+        
+        [HttpGet]
+        public ActionResult DetallesCitasPartial(int id)
+        {
+            var laCita = _obtenerCitasPorId.Obtener(id);
+
+            if (laCita == null)
+            {
+                return Json(new { notFound = true, message = "Estimado usuario, no se ha encontrado la cita, favor realice una" }, JsonRequestBehavior.AllowGet);
+            }
+
+            return PartialView("_DetallesCitaPartial", laCita);
+        }
+
 
 
         public ActionResult DetallesCitas(int id, string mensaje )
