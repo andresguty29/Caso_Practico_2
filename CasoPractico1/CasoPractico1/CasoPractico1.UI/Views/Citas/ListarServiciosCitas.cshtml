@@ -1,0 +1,91 @@
+﻿@model IEnumerable<CasoPractico1.Abstracciones.ModelosParaUI.ServiciosDTO>
+
+@{
+    ViewBag.Title = "ListarServiciosCitas";
+}
+
+<h2>ListarServiciosCitas</h2>
+
+
+
+
+
+<p>
+    @using (Html.BeginForm("DetallesCitas", "Citas", FormMethod.Get))
+    {
+        <input type="text" name="id" placeholder="Ingrese ID" />
+        <input type="submit" value="Buscar cita" />
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Buscar Citas por Cliente", "CitasPorCliente", "Citas")
+</p>
+
+
+
+@if (!string.IsNullOrEmpty(ViewBag.MensajeError))
+{
+    <div class="alert alert-danger">
+        @ViewBag.MensajeError
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clinica)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @if (item.Especialidad == 1)
+                {
+                    <text>Medicina General</text>
+                }
+                else if (item.Especialidad == 2)
+                {
+                    <text>Imagenología</text>
+                }
+                else if (item.Especialidad == 3)
+                {
+                    <text>Microbiología</text>
+                }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especialista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Clinica)
+            </td>
+            <td>
+                @Html.ActionLink("Reservar", "CrearCitas", new { id = item.Id }) |
+
+            </td>
+        </tr>
+    }
+
+</table>

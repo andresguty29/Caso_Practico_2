@@ -1,0 +1,28 @@
+@model CasoPractico1.Abstracciones.ModelosParaUI.EspecialidadesDTO
+
+@{
+    ViewBag.Title = "Eliminar Especialidad";
+}
+
+<h2>Eliminar Especialidad</h2>
+
+<h3>¿Está seguro de que desea eliminar esta especialidad?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dd>@Html.DisplayFor(model => model.Nombre)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Descripcion)</dt>
+        <dd>@Html.DisplayFor(model => model.Descripcion)</dd>
+    </dl>
+
+    @using (Html.BeginForm("EliminarEspecialidadesConfirmado", "Especialidades", new { id = Model.Id }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+            @Html.ActionLink("Cancelar", "ListarEspecialidades")
+        </div>
+    }
+</div>

@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CasoPractico1.Abstracciones.AccesoADatos.Citas.ListarServiciosCitas;
+using CasoPractico1.Abstracciones.ModelosParaUI;
+using CasoPractico1.AccesoADatos.Modelos;
+using Inventario.AccesoADatos;
+
+namespace CasoPractico1.AccesoADatos.Citas.ListarServiciosCitas
+{
+    public class ListarServiciosCitasAD : IListarServiciosCitasAD
+    {
+
+
+
+
+        private Contexto _elContexto;
+        public ListarServiciosCitasAD()
+        {
+            _elContexto = new Contexto();
+        }
+
+
+        public List<ServiciosDTO> Obtener()
+        {
+
+            List<ServiciosDTO> laListaARetornar = (from servicios in _elContexto.Servicios
+                                                   where servicios.Estado == true
+                                                   select new ServiciosDTO
+                                                   {
+                                                       Id = servicios.Id,
+                                                       Nombre = servicios.Nombre,
+                                                       Descripcion = servicios.Descripcion,
+                                                       Monto = servicios.Monto,
+                                                       IVA = servicios.IVA,
+                                                       Especialidad = servicios.Especialidad,
+                                                       Especialista = servicios.Especialista,
+                                                       Clinica = servicios.Clinica,
+                                                       FechaDeModificacion = servicios.FechaDeModificacion,
+                                                       FechaDeRegistro = servicios.FechaDeRegistro,
+                                                       Estado = servicios.Estado,
+                                                   }).ToList();
+            return laListaARetornar;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}

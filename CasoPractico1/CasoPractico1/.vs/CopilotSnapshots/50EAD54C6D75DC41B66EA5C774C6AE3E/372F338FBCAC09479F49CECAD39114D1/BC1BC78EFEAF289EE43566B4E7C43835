@@ -1,0 +1,58 @@
+﻿namespace Inventario.AccesoADatos.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class InitialCreate : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Servicios",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Nombre = c.String(nullable: false, maxLength: 100),
+                        Descripcion = c.String(nullable: false, maxLength: 200),
+                        Monto = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        IVA = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Especialidad = c.Int(nullable: false),
+                        Especialista = c.String(nullable: false, maxLength: 200),
+                        Clinica = c.String(nullable: false, maxLength: 200),
+                        FechaDeRegistro = c.DateTime(nullable: false),
+                        FechaDeModificacion = c.DateTime(),
+                        ESTADO = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.CITAS",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        NombreDeLaPersona = c.String(nullable: false, maxLength: 150),
+                        Identificacion = c.String(nullable: false, maxLength: 30),
+                        Telefono = c.String(nullable: false, maxLength: 10),
+                        Correo = c.String(nullable: false, maxLength: 50),
+                        FechaNacimiento = c.DateTime(nullable: false),
+                        Direccion = c.String(nullable: false, maxLength: 200),
+                        MontoTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        FechaDeLaCita = c.DateTime(nullable: false),
+                        FechaDeRegistro = c.DateTime(nullable: false),
+                        IdServicio = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Servicios", t => t.IdServicio, cascadeDelete: true)
+                .Index(t => t.IdServicio);
+            
+        }
+        
+        public override void Down()
+        {
+            DropForeignKey("dbo.CITAS", "IdServicio", "dbo.Servicios");
+            DropIndex("dbo.CITAS", new[] { "IdServicio" });
+            DropTable("dbo.CITAS");
+            DropTable("dbo.Servicios");
+        }
+    }
+}

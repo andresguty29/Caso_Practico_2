@@ -1,0 +1,31 @@
+@model CasoPractico1.Abstracciones.ModelosParaUI.EspecialidadesDTO
+
+@{
+    ViewBag.Title = "Detalles de Especialidad";
+}
+
+<h2>Detalles de Especialidad</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dd>@Html.DisplayFor(model => model.Nombre)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Descripcion)</dt>
+        <dd>@Html.DisplayFor(model => model.Descripcion)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FechaDeRegistro)</dt>
+        <dd>@Html.DisplayFor(model => model.FechaDeRegistro)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FechaDeModificacion)</dt>
+        <dd>@Html.DisplayFor(model => model.FechaDeModificacion)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "EditarEspecialidades", new { id = Model.Id })
+    @Html.ActionLink("Volver al Listado", "ListarEspecialidades")
+</p>

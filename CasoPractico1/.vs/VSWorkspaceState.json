@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CasoPractico1",
+    "\\CasoPractico1\\CasoPractico1.Abstracciones\\obj",
+    "\\CasoPractico1\\CasoPractico1.Abstracciones\\Properties",
+    "\\CasoPractico1\\CasoPractico1.AccesoADatos",
+    "\\CasoPractico1\\CasoPractico1.AccesoADatos\\Citas",
+    "\\CasoPractico1\\CasoPractico1.LogicaDeNegocio"
+  ],
+  "SelectedNode": "\\CasoPractico1\\CasoPractico1.AccesoADatos\\Contexto.cs",
+  "PreviewInSolutionExplorer": false
+}

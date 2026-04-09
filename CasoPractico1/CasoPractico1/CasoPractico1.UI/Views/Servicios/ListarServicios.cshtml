@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CasoPractico1.Abstracciones.ModelosParaUI.ServiciosDTO>
+
+@{
+    ViewBag.Title = "ListarServicios";
+}
+
+<h2>ListarServicios</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrearServicios")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clinica)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IVA)
+        </td>
+        <td>
+            @if (item.Especialidad == 1)
+            {
+                <text>Medicina General</text>
+            }
+            else if (item.Especialidad == 2)
+            {
+                <text>Imagenología</text>
+            }
+            else if (item.Especialidad == 3)
+            {
+                <text>Microbiología</text>
+            }
+           
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Especialista)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clinica)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditarServicios", new { id = item.Id }) |
+            @Html.ActionLink("Ver citas", "ListarCitas", new { id = item.Id }) |
+
+
+
+
+
+        </td>
+    </tr>
+}
+
+</table>

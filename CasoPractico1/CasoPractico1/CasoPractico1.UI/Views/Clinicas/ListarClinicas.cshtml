@@ -1,0 +1,38 @@
+@model IEnumerable<CasoPractico1.Abstracciones.ModelosParaUI.ClinicasDTO>
+
+@{
+    ViewBag.Title = "Listado de Clínicas";
+}
+
+<h2>Listado de Clínicas</h2>
+
+<p>
+    @Html.ActionLink("Crear Nueva Clínica", "CrearClinicas")
+</p>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+        <th>@Html.DisplayNameFor(model => model.Direccion)</th>
+        <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+        <th>@Html.DisplayNameFor(model => model.Correo)</th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+            <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+            <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+            <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+        <td>
+            @Html.ActionLink("Editar", "EditarClinicas", new { id = item.Id }) |
+            @Html.ActionLink("Detalles", "DetallesClinicas", new { id = item.Id }) |
+            @Html.ActionLink("Eliminar", "EliminarClinicas", new { id = item.Id })
+        </td>
+        </tr>
+    }
+</table>

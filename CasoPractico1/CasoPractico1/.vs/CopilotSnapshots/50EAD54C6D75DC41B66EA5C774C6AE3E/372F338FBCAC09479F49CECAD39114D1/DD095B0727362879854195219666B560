@@ -1,0 +1,102 @@
+﻿-- Script de Migración: InitialCreate
+-- Base de datos: CASO_PRACTICO_MEDICO
+-- Fecha: 2025
+
+USE [CASO_PRACTICO_MEDICO]
+GO
+
+-- Verificar si existe la base de datos, si no, crearla
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'CASO_PRACTICO_MEDICO')
+BEGIN
+    CREATE DATABASE [CASO_PRACTICO_MEDICO]
+END
+GO
+
+USE [CASO_PRACTICO_MEDICO]
+GO
+
+-- Crear tabla Servicios
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Servicios]') AND type in (N'U'))
+BEGIN
+    CREATE TABLE [dbo].[Servicios](
+        [Id] [int] IDENTITY(1,1) NOT NULL,
+        [Nombre] [nvarchar](100) NOT NULL,
+        [Descripcion] [nvarchar](200) NOT NULL,
+        [Monto] [decimal](18, 2) NOT NULL,
+        [IVA] [decimal](18, 2) NOT NULL,
+        [Especialidad] [int] NOT NULL,
+        [Especialista] [nvarchar](200) NOT NULL,
+        [Clinica] [nvarchar](200) NOT NULL,
+        [FechaDeRegistro] [datetime] NOT NULL,
+        [FechaDeModificacion] [datetime] NULL,
+        [ESTADO] [bit] NOT NULL,
+        CONSTRAINT [PK_dbo.Servicios] PRIMARY KEY CLUSTERED ([Id] ASC)
+    )
+END
+GO
+
+-- Crear tabla CITAS
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CITAS]') AND type in (N'U'))
+BEGIN
+    CREATE TABLE [dbo].[CITAS](
+        [Id] [int] IDENTITY(1,1) NOT NULL,
+        [NombreDeLaPersona] [nvarchar](150) NOT NULL,
+        [Identificacion] [nvarchar](30) NOT NULL,
+        [Telefono] [nvarchar](10) NOT NULL,
+        [Correo] [nvarchar](50) NOT NULL,
+        [FechaNacimiento] [datetime] NOT NULL,
+        [Direccion] [nvarchar](200) NOT NULL,
+        [MontoTotal] [decimal](18, 2) NOT NULL,
+        [FechaDeLaCita] [datetime] NOT NULL,
+        [FechaDeRegistro] [datetime] NOT NULL,
+        [IdServicio] [int] NOT NULL,
+        CONSTRAINT [PK_dbo.CITAS] PRIMARY KEY CLUSTERED ([Id] ASC)
+    )
+END
+GO
+
+-- Crear Foreign Key entre CITAS y Servicios
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.CITAS_dbo.Servicios_IdServicio]') AND parent_object_id = OBJECT_ID(N'[dbo].[CITAS]'))
+BEGIN
+    ALTER TABLE [dbo].[CITAS] WITH CHECK ADD CONSTRAINT [FK_dbo.CITAS_dbo.Servicios_IdServicio] 
+    FOREIGN KEY([IdServicio]) REFERENCES [dbo].[Servicios] ([Id]) ON DELETE CASCADE
+END
+GO
+
+-- Crear índice en IdServicio
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[CITAS]') AND name = N'IX_IdServicio')
+BEGIN
+    CREATE NONCLUSTERED INDEX [IX_IdServicio] ON [dbo].[CITAS]
+    (
+        [IdServicio] ASC
+    )
+END
+GO
+
+-- Crear tabla de migraciones de Entity Framework
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[__MigrationHistory]') AND type in (N'U'))
+BEGIN
+    CREATE TABLE [dbo].[__MigrationHistory](
+        [MigrationId] [nvarchar](150) NOT NULL,
+        [ContextKey] [nvarchar](300) NOT NULL,
+        [Model] [varbinary](max) NOT NULL,
+        [ProductVersion] [nvarchar](32) NOT NULL,
+        CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+        (
+            [MigrationId] ASC,
+            [ContextKey] ASC
+        )
+    )
+END
+GO
+
+-- Registrar la migración
+IF NOT EXISTS (SELECT * FROM [dbo].[__MigrationHistory] WHERE [MigrationId] = '202501000000000_InitialCreate')
+BEGIN
+    INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion])
+    VALUES ('202501000000000_InitialCreate', 'Inventario.AccesoADatos.Contexto', 0x1F8B, '6.0.0')
+END
+GO
+
+PRINT 'Base de datos creada exitosamente!'
+GO

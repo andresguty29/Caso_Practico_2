@@ -1,0 +1,37 @@
+@model CasoPractico1.Abstracciones.ModelosParaUI.ClinicasDTO
+
+@{
+    ViewBag.Title = "Detalles de Clínica";
+}
+
+<h2>Detalles de Clínica</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dd>@Html.DisplayFor(model => model.Nombre)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Direccion)</dt>
+        <dd>@Html.DisplayFor(model => model.Direccion)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Telefono)</dt>
+        <dd>@Html.DisplayFor(model => model.Telefono)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Correo)</dt>
+        <dd>@Html.DisplayFor(model => model.Correo)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FechaDeRegistro)</dt>
+        <dd>@Html.DisplayFor(model => model.FechaDeRegistro)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FechaDeModificacion)</dt>
+        <dd>@Html.DisplayFor(model => model.FechaDeModificacion)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "EditarClinicas", new { id = Model.Id })
+    @Html.ActionLink("Volver al Listado", "ListarClinicas")
+</p>

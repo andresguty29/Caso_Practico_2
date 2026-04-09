@@ -1,0 +1,84 @@
+@model IEnumerable<CasoPractico1.Abstracciones.ModelosParaUI.CitasDTO>
+
+@{
+    ViewBag.Title = "Listado de Citas por Cliente";
+}
+
+<h2>Listado de Citas por Cliente</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Buscar Citas de Cliente</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CitasPorCliente", "Citas", FormMethod.Post, new { @class = "form-inline" }))
+        {
+            <div class="form-group">
+                <label for="identificacion" class="control-label">Identificación del Cliente:</label>
+                <input type="text" name="identificacion" id="identificacion" class="form-control" placeholder="Ingrese identificación" value="@ViewBag.Identificacion" required />
+            </div>
+            <input type="submit" value="Buscar Citas" />
+        }
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+{
+    <div class="alert alert-warning">
+        @ViewBag.Mensaje
+    </div>
+}
+
+@if (Model != null && Model.Any())
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Citas de @ViewBag.NombreCliente (ID: @ViewBag.Identificacion)</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Id)</th>
+                        <th>@Html.DisplayNameFor(model => model.FechaDeLaCita)</th>
+                        <th>@Html.DisplayNameFor(model => model.MontoTotal)</th>
+                        <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                        <th>@Html.DisplayNameFor(model => model.Correo)</th>
+                        <th>@Html.DisplayNameFor(model => model.FechaDeRegistro)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.FechaDeLaCita)</td>
+                            <td>@Html.DisplayFor(modelItem => item.MontoTotal)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.FechaDeRegistro)</td>
+                            <td>
+                                @Html.ActionLink("Ver Detalles", "DetallesCitas", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        <strong>Total de citas encontradas:</strong> @Model.Count()
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="form-group">
+    @Html.ActionLink("Volver a Servicios", "ListarServiciosCitas", "Citas")
+    |
+    @Html.ActionLink("Crear Nueva Cita", "CrearCitas", "Citas")
+</div>

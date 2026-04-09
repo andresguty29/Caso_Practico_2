@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62C397FA-4916-42DA-8D5D-A9A5B100EB60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPSEBASMADRIZ.Abstracciones</RootNamespace>
+    <AssemblyName>CasoPractico1.Abstracciones</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoADatos\Citas\CrearCitas\ICrearCitasAD.cs" />
+    <Compile Include="AccesoADatos\Citas\ListarCitasPorCliente\IListarCitasPorClienteAD.cs" />
+    <Compile Include="AccesoADatos\Citas\ListarCitas\IListarCitasAD.cs" />
+    <Compile Include="AccesoADatos\Citas\ListarServiciosCitas\IListarServiciosCitasAD.cs" />
+    <Compile Include="AccesoADatos\Citas\ObtenerCitasPorId\IObtenerCitasPorIdAD.cs" />
+    <Compile Include="AccesoADatos\Clinicas\ActualizarClinicas\IActualizarClinicasAD.cs" />
+    <Compile Include="AccesoADatos\Clinicas\CrearClinicas\ICrearClinicasAD.cs" />
+    <Compile Include="AccesoADatos\Clinicas\EliminarClinicas\IEliminarClinicasAD.cs" />
+    <Compile Include="AccesoADatos\Clinicas\ListarClinicas\IListarClinicasAD.cs" />
+    <Compile Include="AccesoADatos\Clinicas\ObtenerClinicasPorId\IObtenerClinicasPorIdAD.cs" />
+    <Compile Include="AccesoADatos\Especialidades\ActualizarEspecialidades\IActualizarEspecialidadesAD.cs" />
+    <Compile Include="AccesoADatos\Especialidades\CrearEspecialidades\ICrearEspecialidadesAD.cs" />
+    <Compile Include="AccesoADatos\Especialidades\EliminarEspecialidades\IEliminarEspecialidadesAD.cs" />
+    <Compile Include="AccesoADatos\Especialidades\ListarEspecialidades\IListarEspecialidadesAD.cs" />
+    <Compile Include="AccesoADatos\Especialidades\ObtenerEspecialidadesPorId\IObtenerEspecialidadesPorIdAD.cs" />
+    <Compile Include="AccesoADatos\Servicios\ActualizarServicios\IActualizarServiciosAD.cs" />
+    <Compile Include="AccesoADatos\Servicios\CrearServicios\ICrearServiciosAD.cs" />
+    <Compile Include="AccesoADatos\Servicios\ListarServicios\IListarServiciosAD.cs" />
+    <Compile Include="AccesoADatos\Servicios\ObtenerServiciosPordId\IObtenerServiciosPorIdAD.cs" />
+    <Compile Include="LogicaDeNegocio\Citas\CrearCitas\ICrearCitasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Citas\ListarCitasPorCliente\IListarCitasPorClienteLN.cs" />
+    <Compile Include="LogicaDeNegocio\Citas\ListarCitas\IListarCitasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Citas\ListarServiciosCitas\IListarServiciosCitasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Citas\ObtenerCitasPorId\IObtenerCitasPorIdLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clinicas\ActualizarClinicas\IActualizarClinicasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clinicas\CrearClinicas\ICrearClinicasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clinicas\EliminarClinicas\IEliminarClinicasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clinicas\ListarClinicas\IListarClinicasLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clinicas\ObtenerClinicasPorId\IObtenerClinicasPorIdLN.cs" />
+    <Compile Include="LogicaDeNegocio\Especialidades\ActualizarEspecialidades\IActualizarEspecialidadesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Especialidades\CrearEspecialidades\ICrearEspecialidadesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Especialidades\EliminarEspecialidades\IEliminarEspecialidadesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Especialidades\ListarEspecialidades\IListarEspecialidadesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Especialidades\ObtenerEspecialidadesPorId\IObtenerEspecialidadesPorIdLN.cs" />
+    <Compile Include="LogicaDeNegocio\General\IFecha.cs" />
+    <Compile Include="LogicaDeNegocio\Servicios\ActualizarServicios\IActualizarServiciosLN.cs" />
+    <Compile Include="LogicaDeNegocio\Servicios\CrearServicios\ICrearServiciosLN.cs" />
+    <Compile Include="LogicaDeNegocio\Servicios\ListarServicios\IListarServiciosLN.cs" />
+    <Compile Include="LogicaDeNegocio\Servicios\ObtenerServiciosPorId\IObtenerServiciosPorIdLN.cs" />
+    <Compile Include="ModelosParaUI\BuscarCitaDTO.cs" />
+    <Compile Include="ModelosParaUI\CitasDTO.cs" />
+    <Compile Include="ModelosParaUI\ClinicasDTO.cs" />
+    <Compile Include="ModelosParaUI\EspecialidadesDTO.cs" />
+    <Compile Include="ModelosParaUI\ServiciosDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

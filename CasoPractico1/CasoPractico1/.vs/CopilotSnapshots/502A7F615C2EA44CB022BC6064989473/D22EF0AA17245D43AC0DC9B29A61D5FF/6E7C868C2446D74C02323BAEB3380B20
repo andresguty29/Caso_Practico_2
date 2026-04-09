@@ -1,0 +1,117 @@
+﻿using CasoPractico1.Abstracciones.LogicaDeNegocio.Especialidades.ActualizarEspecialidades;
+using CasoPractico1.Abstracciones.LogicaDeNegocio.Especialidades.CrearEspecialidades;
+using CasoPractico1.Abstracciones.LogicaDeNegocio.Especialidades.EliminarEspecialidades;
+using CasoPractico1.Abstracciones.LogicaDeNegocio.Especialidades.ListarEspecialidades;
+using CasoPractico1.Abstracciones.LogicaDeNegocio.Especialidades.ObtenerEspecialidadesPorId;
+using CasoPractico1.Abstracciones.ModelosParaUI;
+using CasoPractico1.LogicaDeNegocio.Especialidades.ActualizarEspecialidades;
+using CasoPractico1.LogicaDeNegocio.Especialidades.CrearEspecialidades;
+using CasoPractico1.LogicaDeNegocio.Especialidades.EliminarEspecialidades;
+using CasoPractico1.LogicaDeNegocio.Especialidades.ListarEspecialidades;
+using CasoPractico1.LogicaDeNegocio.Especialidades.ObtenerEspecialidadesPorId;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+
+namespace CasoPractico1.UI.Controllers
+{
+    public class EspecialidadesController : Controller
+    {
+        private IListarEspecialidadesLN _listarEspecialidades;
+        private ICrearEspecialidadesLN _crearEspecialidades;
+        private IObtenerEspecialidadesPorIdLN _obtenerEspecialidadesPorId;
+        private IActualizarEspecialidadesLN _actualizarEspecialidades;
+        private IEliminarEspecialidadesLN _eliminarEspecialidades;
+
+        public EspecialidadesController()
+        {
+            _listarEspecialidades = new ListarEspecialidadesLN();
+            _crearEspecialidades = new CrearEspecialidadesLN();
+            _obtenerEspecialidadesPorId = new ObtenerEspecialidadesPorIdLN();
+            _actualizarEspecialidades = new ActualizarEspecialidadesLN();
+            _eliminarEspecialidades = new EliminarEspecialidadesLN();
+        }
+
+        // GET: Especialidades
+        public ActionResult ListarEspecialidades()
+        {
+            List<EspecialidadesDTO> laListaDeEspecialidades = _listarEspecialidades.Obtener();
+            return View(laListaDeEspecialidades);
+        }
+
+        // GET: Especialidades/Details/5
+        public ActionResult DetallesEspecialidades(int id)
+        {
+            EspecialidadesDTO laEspecialidad = _obtenerEspecialidadesPorId.Obtener(id);
+            return View(laEspecialidad);
+        }
+
+        // GET: Especialidades/Create
+        public ActionResult CrearEspecialidades()
+        {
+            return View();
+        }
+
+        // POST: Especialidades/Create
+        [HttpPost]
+        public async Task<ActionResult> CrearEspecialidades(EspecialidadesDTO laEspecialidadCreada)
+        {
+            try
+            {
+                int cantidadDeRegistros = await _crearEspecialidades.Guardar(laEspecialidadCreada);
+                return RedirectToAction("ListarEspecialidades");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Especialidades/Edit/5
+        public ActionResult EditarEspecialidades(int id)
+        {
+            EspecialidadesDTO laEspecialidad = _obtenerEspecialidadesPorId.Obtener(id);
+            return View(laEspecialidad);
+        }
+
+        // POST: Especialidades/Edit/5
+        [HttpPost]
+        public ActionResult EditarEspecialidades(EspecialidadesDTO laEspecialidadEditada)
+        {
+            try
+            {
+                int cantidadDeRegistros = _actualizarEspecialidades.Actualizar(laEspecialidadEditada);
+                return RedirectToAction("ListarEspecialidades");
+            }
+            catch
+            {
+                return View(laEspecialidadEditada);
+            }
+        }
+
+        // GET: Especialidades/Delete/5
+        public ActionResult EliminarEspecialidades(int id)
+        {
+            EspecialidadesDTO laEspecialidad = _obtenerEspecialidadesPorId.Obtener(id);
+            return View(laEspecialidad);
+        }
+
+        // POST: Especialidades/Delete/5
+        [HttpPost]
+        public ActionResult EliminarEspecialidadesConfirmado(int id)
+        {
+            try
+            {
+                int cantidadDeRegistros = _eliminarEspecialidades.Eliminar(id);
+                return RedirectToAction("ListarEspecialidades");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}

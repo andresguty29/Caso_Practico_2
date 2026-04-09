@@ -1,0 +1,14 @@
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.csproj.AssemblyReference.cache
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.AccesoADatos.dll.config
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.AccesoADatos.dll
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.AccesoADatos.pdb
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.Abstracciones.dll
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.dll
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\CasoPractico1.Abstracciones.pdb
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.xml
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.csproj.CoreCompileInputs.cache
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPrac.B2743163.Up2Date
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.dll
+C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.AccesoADatos\obj\Debug\CasoPractico1.AccesoADatos.pdb
