@@ -12,3 +12,17 @@ C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.Lo
 C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPrac.A85FECB6.Up2Date
 C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPractico1.LogicaDeNegocio.dll
 C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPractico1.LogicaDeNegocio.pdb
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.LogicaDeNegocio.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.LogicaDeNegocio.pdb
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.Abstracciones.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.AccesoADatos.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\EntityFramework.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.Abstracciones.pdb
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.AccesoADatos.pdb
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\CasoPractico1.AccesoADatos.dll.config
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\bin\Debug\EntityFramework.xml
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPractico1.LogicaDeNegocio.csproj.AssemblyReference.cache
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPractico1.LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPrac.A85FECB6.Up2Date
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPractico1.LogicaDeNegocio.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.LogicaDeNegocio\obj\Debug\CasoPractico1.LogicaDeNegocio.pdb

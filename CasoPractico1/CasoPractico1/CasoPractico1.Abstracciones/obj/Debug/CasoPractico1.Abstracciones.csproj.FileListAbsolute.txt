@@ -4,3 +4,9 @@ C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.Ab
 C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.csproj.CoreCompileInputs.cache
 C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.dll
 C:\Users\Extremetech\Desktop\Caso 1\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.pdb
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\bin\Debug\CasoPractico1.Abstracciones.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\bin\Debug\CasoPractico1.Abstracciones.pdb
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.csproj.AssemblyReference.cache
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.csproj.CoreCompileInputs.cache
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.dll
+C:\Users\Extremetech\Desktop\Caso Práctico 2\Caso_Practico_2\CasoPractico1\CasoPractico1\CasoPractico1.Abstracciones\obj\Debug\CasoPractico1.Abstracciones.pdb

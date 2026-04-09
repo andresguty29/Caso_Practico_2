@@ -23,6 +23,7 @@ using CasoPractico1.LogicaDeNegocio.Servicios.ObtenerServiciosPorId;
 
 namespace CasoPractico1.Controllers
 {
+    [Authorize(Roles = "Cliente")]
     public class CitasController : Controller
     {
         private IListarServiciosCitasLN _listarServiciosCitas;

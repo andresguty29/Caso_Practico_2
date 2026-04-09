@@ -21,7 +21,7 @@ using System.Web.Mvc;
 namespace CasoPractico1.Controllers
 {
 
-  
+    [Authorize(Roles = "Administrador")]
     public class ServiciosController : Controller
     {
 

@@ -19,11 +19,41 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Especialidades", "ListarEspecialidades", "Especialidades", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Clínicas", "ListarClinicas", "Clinicas", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Servicios", "ListarServicios", "Servicios", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Citas", "ListarServiciosCitas", "Citas", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Citas por Cliente", "CitasPorCliente", "Citas", new { area = "" }, new { @class = "nav-link" })</li>
+
+                    @if (Request.IsAuthenticated && User.IsInRole("Administrador"))
+                    {
+                        <li>@Html.ActionLink("Especialidades", "ListarEspecialidades", "Especialidades", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Clínicas", "ListarClinicas", "Clinicas", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Servicios", "ListarServicios", "Servicios", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Reserva Administrativa", "ListarServicios", "Servicios", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+
+                    @if (Request.IsAuthenticated && User.IsInRole("Cliente"))
+                    {
+                        <li>@Html.ActionLink("Citas", "ListarServiciosCitas", "Citas", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Citas por Cliente", "CitasPorCliente", "Citas", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+                </ul>
+
+                <ul class="navbar-nav">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link">@User.Identity.Name</span>
+                        </li>
+                        <li class="nav-item">
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-link nav-link" style="text-decoration:none;">Cerrar sesión</button>
+                            }
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Registro", "Register", "Account", null, new { @class = "nav-link" })</li>
+                    }
                 </ul>
             </div>
         </div>
